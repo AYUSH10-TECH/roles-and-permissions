@@ -4,7 +4,7 @@ const { users } = require('./data')
 const shopRouter = require('./routes/shop')
 const homeRouter= require('./routes/home')
 const communityRouter= require('./routes/community')
-
+const port= process.env.PORT || 8081
 app.use(express.json())
 app.use(setUser)
 app.use('/shop', shopRouter)
@@ -24,4 +24,4 @@ function setUser(req, res, next) {
   next()
 }
 
-app.listen(8081)
+app.listen(port)
